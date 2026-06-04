@@ -136,7 +136,7 @@ function Index() {
                 alt="Rakhiul, product designer"
                 width={520}
                 height={520}
-                className="absolute inset-x-0 bottom-0 mx-auto w-full h-full object-cover object-top"
+                className="absolute inset-x-0 bottom-0 mx-auto w-full h-full object-cover object-center scale-110"
               />
             </div>
 
