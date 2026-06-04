@@ -110,6 +110,20 @@ function Index() {
 
       {/* HERO */}
       <section id="home" className="pt-16 pb-24 relative overflow-hidden">
+        {/* Decorative floating shapes */}
+        <div className="absolute top-20 left-10 size-3 rounded-full bg-brand/40 animate-bounce" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-32 right-16 size-2 rounded-full bg-brand/60 animate-bounce" style={{ animationDuration: '2.5s' }} />
+        <div className="absolute bottom-40 left-16 size-4 rounded-full border-2 border-brand/30 animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute top-48 right-10 size-3 rotate-45 bg-brand/20 animate-bounce" style={{ animationDuration: '3.5s' }} />
+        <div className="absolute bottom-60 right-24 size-2 rounded-full bg-brand/50 animate-pulse" />
+        <div className="absolute top-16 left-1/3 size-5 rounded-full border border-brand/25 animate-ping" style={{ animationDuration: '3s' }} />
+        <div className="absolute bottom-32 left-1/4 size-6 rounded-full bg-brand/10" />
+        <div className="absolute top-40 right-1/3 size-8 rounded-full bg-brand/10" />
+
+        {/* Decorative ring behind portrait */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-dashed border-brand/20" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[560px] rounded-full border border-brand/10" />
+
         <div className="max-w-6xl mx-auto px-4 text-center relative">
           <span className="inline-block font-hand text-2xl px-5 py-1 rounded-full border border-ink/20">
             Hello!
