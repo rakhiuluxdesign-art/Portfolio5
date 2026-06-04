@@ -12,10 +12,10 @@ import blog3 from "@/assets/blog-3.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Jenny — Product Designer Portfolio" },
-      { name: "description", content: "Portfolio of Jenny, a product designer with 10 years of experience in UI/UX, web and landing page design." },
-      { property: "og:title", content: "Jenny — Product Designer Portfolio" },
-      { property: "og:description", content: "Portfolio of Jenny, a product designer with 10 years of experience in UI/UX, web and landing page design." },
+      { title: "Rakhiul — Product Designer Portfolio" },
+      { name: "description", content: "Portfolio of Rakhiul, a product designer with 10 years of experience in UI/UX, web and landing page design." },
+      { property: "og:title", content: "Rakhiul — Product Designer Portfolio" },
+      { property: "og:description", content: "Portfolio of Rakhiul, a product designer with 10 years of experience in UI/UX, web and landing page design." },
     ],
   }),
   component: Index,
