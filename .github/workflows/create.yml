@@ -29,12 +29,31 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Compute BASE_URL
+        id: base
+        run: |
+          # Use custom override if provided, otherwise derive from repo:
+          # - user/org sites (<user>.github.io) -> "/"
+          # - project sites                     -> "/<repo>/"
+          if [ -n "${{ vars.BASE_URL }}" ]; then
+            BASE="${{ vars.BASE_URL }}"
+          else
+            REPO="${{ github.event.repository.name }}"
+            OWNER="${{ github.repository_owner }}"
+            if [ "$REPO" = "${OWNER}.github.io" ]; then
+              BASE="/"
+            else
+              BASE="/${REPO}/"
+            fi
+          fi
+          echo "Using BASE_URL=$BASE"
+          echo "base=$BASE" >> "$GITHUB_OUTPUT"
+
       - name: Build
         run: bun run build
         env:
-          # GitHub Pages serves the site under /<repo-name>/ unless using a custom domain.
-          # If your site is at https://<user>.github.io/<repo>/, set BASE_URL to "/<repo>/".
-          BASE_URL: ${{ vars.BASE_URL || '/' }}
+          BASE_URL: ${{ steps.base.outputs.base }}
+          VITE_BASE_URL: ${{ steps.base.outputs.base }}
 
       - name: Add SPA fallback (404.html)
         run: |
